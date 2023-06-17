@@ -1,2 +1,2 @@
 # os-automatic-install
-Automatic installer for GNU/Linux operating systems
+An automatic installer for GNU/Linux operating systems
