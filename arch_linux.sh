@@ -176,7 +176,6 @@ pacstrap -K /mnt \
   exfat-utils \
   e2fsprogs \
   git \
-  gst-plugin-pipewire \
   intel-ucode \
   iwd \
   libva \
@@ -193,7 +192,6 @@ pacstrap -K /mnt \
   qt6-wayland \
   sudo \
   systemd \
-  wireplumber \
   zsh \
   zsh-completions \
   zstd
@@ -315,6 +313,7 @@ yay -Syu \
     breeze-icons \
     dolphin \
     firefox \
+    gst-plugin-pipewire \
     hyprland-nvidia \
     hyprpaper \
     kitty \
@@ -329,6 +328,7 @@ yay -Syu \
     ttf-nerd-fonts-symbols \
     vscodium-bin \
     waybar \
+    wireplumber \
     wofi \
     \
     gnu-free-fonts \
