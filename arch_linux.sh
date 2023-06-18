@@ -188,12 +188,6 @@ pacstrap -K /mnt \
   neovim \
   nvidia \
   pacman-contrib \
-  pipewire \
-  pipewire-alsa \
-  pipewire-audio \
-  pipewire-docs \
-  pipewire-jack \
-  pipewire-pulse \
   qt5ct \
   qt5-wayland \
   qt6-wayland \
@@ -325,6 +319,12 @@ yay -Syu \
     hyprpaper \
     kitty \
     nvidia-vaapi-driver-git \
+    pipewire \
+    pipewire-alsa \
+    pipewire-audio \
+    pipewire-docs \
+    pipewire-jack \
+    pipewire-pulse \
     swaylock-effects-git \
     ttf-nerd-fonts-symbols \
     vscodium-bin \
