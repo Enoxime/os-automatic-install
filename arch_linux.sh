@@ -176,6 +176,7 @@ pacstrap -K /mnt \
   exfat-utils \
   e2fsprogs \
   git \
+  gst-plugin-pipewire \
   intel-ucode \
   iwd \
   libva \
@@ -187,12 +188,18 @@ pacstrap -K /mnt \
   neovim \
   nvidia \
   pacman-contrib \
-  pulseaudio \
+  pipewire \
+  pipewire-alsa \
+  pipewire-audio \
+  pipewire-docs \
+  pipewire-jack \
+  pipewire-pulse \
   qt5ct \
   qt5-wayland \
   qt6-wayland \
   sudo \
   systemd \
+  wireplumber \
   zsh \
   zsh-completions \
   zstd
@@ -325,7 +332,6 @@ yay -Syu \
     wofi \
     \
     gnu-free-fonts \
-    jack2 \
     phonon-qt5-gstreamer
 EOD
 
