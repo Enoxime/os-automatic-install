@@ -197,7 +197,7 @@ pacstrap -K /mnt \
   qt6-wayland \
   sudo \
   systemd \
-  textinfo \
+  texinfo \
   zsh \
   zsh-completions \
   zstd
