@@ -166,9 +166,14 @@ reflector \
   --sort rate \
   --save /etc/pacman.d/mirrorlist
 
+cat << EOD >> "/etc/pacman.conf"
+
+[community]
+Include = /etc/pacman.d/mirrorlist
+EOD
+
 # Install base
 pacstrap -K /mnt \
-  alsa-utils \
   base \
   base-devel \
   btrfs-progs \
@@ -192,6 +197,7 @@ pacstrap -K /mnt \
   qt6-wayland \
   sudo \
   systemd \
+  textinfo \
   zsh \
   zsh-completions \
   zstd
