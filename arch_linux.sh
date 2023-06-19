@@ -172,6 +172,17 @@ cat << EOD >> "/etc/pacman.conf"
 Include = /etc/pacman.d/mirrorlist
 EOD
 
+# see: https://bbs.archlinux.org/viewtopic.php?pid=2081392#p2081392
+while ! systemctl show pacman-init.service | grep SubState=exited; do
+  systemctl --no-pager status -n0 pacman-init.service || true
+  sleep 1
+done
+
+pacman -Sy
+pacman -S archlinux-keyring
+pacman-key --init
+pacman-key --populate
+
 # Install base
 pacstrap -K /mnt \
   base \
