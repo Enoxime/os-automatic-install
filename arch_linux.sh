@@ -179,7 +179,7 @@ while ! systemctl show pacman-init.service | grep SubState=exited; do
 done
 
 pacman -Sy
-pacman -S archlinux-keyring
+pacman --sync --noconfirm archlinux-keyring
 pacman-key --init
 pacman-key --populate
 
