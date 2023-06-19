@@ -166,9 +166,25 @@ reflector \
   --sort rate \
   --save /etc/pacman.d/mirrorlist
 
+cat << EOD >> "/etc/pacman.conf"
+
+[community]
+Include = /etc/pacman.d/mirrorlist
+EOD
+
+# see: https://bbs.archlinux.org/viewtopic.php?pid=2081392#p2081392
+while ! systemctl show pacman-init.service | grep SubState=exited; do
+  systemctl --no-pager status -n0 pacman-init.service || true
+  sleep 1
+done
+
+pacman -Sy
+pacman --sync --noconfirm archlinux-keyring
+pacman-key --init
+pacman-key --populate
+
 # Install base
 pacstrap -K /mnt \
-  alsa-utils \
   base \
   base-devel \
   btrfs-progs \
@@ -187,12 +203,12 @@ pacstrap -K /mnt \
   neovim \
   nvidia \
   pacman-contrib \
-  pulseaudio \
   qt5ct \
   qt5-wayland \
   qt6-wayland \
   sudo \
   systemd \
+  texinfo \
   zsh \
   zsh-completions \
   zstd
@@ -314,18 +330,25 @@ yay -Syu \
     breeze-icons \
     dolphin \
     firefox \
+    gst-plugin-pipewire \
     hyprland-nvidia \
     hyprpaper \
     kitty \
     nvidia-vaapi-driver-git \
+    pipewire \
+    pipewire-alsa \
+    pipewire-audio \
+    pipewire-docs \
+    pipewire-jack \
+    pipewire-pulse \
     swaylock-effects-git \
     ttf-nerd-fonts-symbols \
     vscodium-bin \
     waybar \
+    wireplumber \
     wofi \
     \
     gnu-free-fonts \
-    jack2 \
     phonon-qt5-gstreamer
 EOD
 
