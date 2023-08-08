@@ -334,6 +334,7 @@ yay -Syu \
     hyprland-nvidia \
     hyprpaper \
     kitty \
+    mako-git \
     nvidia-vaapi-driver-git \
     pipewire \
     pipewire-alsa \
