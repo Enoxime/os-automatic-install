@@ -348,6 +348,8 @@ yay -Syu \
     waybar \
     wireplumber \
     wofi \
+    xdg-desktop-portal \
+    xdg-desktop-portal-hyprland \
     \
     gnu-free-fonts \
     phonon-qt5-gstreamer
