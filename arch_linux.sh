@@ -188,6 +188,7 @@ pacstrap -K /mnt \
   base \
   base-devel \
   btrfs-progs \
+  dhcpcd \
   dosfstools \
   exfat-utils \
   e2fsprogs \
@@ -209,6 +210,7 @@ pacstrap -K /mnt \
   sudo \
   systemd \
   texinfo \
+  udisks2 \
   zsh \
   zsh-completions \
   zstd
@@ -304,6 +306,7 @@ Exec=/bin/sh -c 'while read -r trg; do case $trg in linux) exit 0; esac; done; /
 EOD
 
   systemctl enable iwd.service
+  systemctl enable dhcpcd.service
   systemctl enable systemd-boot-update.service
 
   sed -i 's/^#ParallelDownloads.*/ParallelDownloads = 20/g' /etc/pacman.conf
@@ -342,6 +345,7 @@ yay -Syu \
     pipewire-docs \
     pipewire-jack \
     pipewire-pulse \
+    polkit-kde-agent \
     swaylock-effects-git \
     ttf-nerd-fonts-symbols \
     vscodium-bin \
@@ -392,6 +396,7 @@ monitor=,highres,auto,1
 # Execute your favorite apps at launch
 # exec-once = waybar & hyprpaper & firefox
 exec-once = waybar & hyprpaper
+exec-once = /usr/lib/polkit-kde-authentication-agent-1
 
 # Source a file (multi-file configs)
 # source = ~/.config/hypr/myColors.conf
