@@ -204,6 +204,8 @@ pacstrap -K /mnt \
   neovim \
   nvidia \
   pacman-contrib \
+  bluez \
+  bluez-utils \
   qt5ct \
   qt5-wayland \
   qt6-wayland \
@@ -308,6 +310,7 @@ EOD
   systemctl enable iwd.service
   systemctl enable dhcpcd.service
   systemctl enable systemd-boot-update.service
+  timedatectl set-ntp true
 
   sed -i 's/^#ParallelDownloads.*/ParallelDownloads = 20/g' /etc/pacman.conf
 
