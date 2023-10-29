@@ -245,7 +245,7 @@ EOD
 
   echo 'root:${__root_password}' | chpasswd
   useradd \
-    --groups wheel,audio,video,storage,disk \
+    --groups wheel,audio,video,storage,disk,input \
     --create-home \
     --shell /bin/zsh \
     --user-group \
